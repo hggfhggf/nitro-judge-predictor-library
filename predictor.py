@@ -30,10 +30,10 @@ _SUBMISSION: Any = None
 def _submission_path() -> Path:
     """Return the local submission path.
 
-    Set PREDICTOR_SUBMISSION_PATH to point at a different file when a task uses
+    Set your path to point at a different file when a task uses
     another package name or when several submissions are in one folder.
     """
-    configured = os.environ.get("PREDICTOR_SUBMISSION_PATH")
+    configured = os.environ.get("")
     if configured:
         return Path(configured)
 
