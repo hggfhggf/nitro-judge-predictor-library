@@ -1,5 +1,7 @@
 ## 📌 Overview
 
+This is not official resource.
+
 Judge Nitro tasks such as:
 
 - https://judge.nitro-ai.org/competitions/roai-2025/lot-2-2026/3/view
