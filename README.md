@@ -1,6 +1,6 @@
 ## 📌 Overview
 
-This is not official resource.
+This is not an official resource.
 
 Judge Nitro tasks such as:
 
