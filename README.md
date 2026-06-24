@@ -14,6 +14,12 @@ use `pre_judging_script.py` files that may fail at runtime due to missing depend
 
 These scripts are intended for the official Judge Nitro environment and assume the existence of a `predictor` module, which is not available during local execution. As a result, running them locally can lead to import errors or other runtime issues.
 
+Warning:
+
+Before running the local evaluator, verify and update any file paths in pre_judging_script.py if necessary.
+
+The predictor.py file should be located in the same directory as the submission file/folder.
+
 ## ✅ Supported Submission Formats
 
 The current version supports the following submission formats:
