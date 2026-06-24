@@ -16,7 +16,7 @@ These scripts are intended for the official Judge Nitro environment and assume t
 
 Warning:
 
-Before running the local evaluator, verify and update any file paths in pre_judging_script.py if necessary.
+Before running the local evaluator, verify and update any file paths in pre_judging_script.py if necessary. Such as train_data, test_data, submission.csv
 
 The predictor.py file should be located in the same directory as the submission file/folder.
 
