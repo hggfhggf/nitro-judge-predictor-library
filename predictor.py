@@ -28,35 +28,34 @@ _SUBMISSION: Any = None
 
 
 def _submission_path() -> Path:
-    """Return the local submission path.
-
-    Set your path to point at a different file when a task uses
-    another package name or when several submissions are in one folder.
-    """
-    configured = os.environ.get("")
-    if configured:
-        return Path(configured)
+    # Папка, где находится predictor.py
+    base_dir = Path(__file__).resolve().parent
 
     candidates = [
-        Path("submission.pkl"),
-        Path("submission.zip"),
-        Path("submission.pt"),
-        Path("submission.pth"),
-        Path("submission.onnx"),
-        Path("submission.npy"),
-        Path("submission.npz"),
-        Path("submission"),
+        base_dir / "submission.pkl",
+        base_dir / "submission.zip",
+        base_dir / "submission.pt",
+        base_dir / "submission.pth",
+        base_dir / "submission.onnx",
+        base_dir / "submission.npy",
+        base_dir / "submission.npz",
+        base_dir / "submission",
     ]
+
     existing = [path for path in candidates if path.is_file()]
+
     if len(existing) == 1:
         return existing[0]
+
     if len(existing) > 1:
-        names = ", ".join(str(path) for path in existing)
+        names = ", ".join(path.name for path in existing)
         raise RuntimeError(
-            "Several local submission files found. Set "
-            f"PREDICTOR_SUBMISSION_PATH explicitly. Candidates: {names}"
+            f"Several submission files found: {names}"
         )
-    return Path("submission.pkl")
+
+    raise FileNotFoundError(
+        f"No submission file found in {base_dir}"
+    )
 
 
 def _load_submission() -> Any:
